@@ -14,16 +14,17 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const DynamicArray = await hre.ethers.getContractFactory("DynamicArray");
-  const dynamicArray = await DynamicArray.deploy();
+  const StructArray = await hre.ethers.getContractFactory("StructArray");
+  const structarray = await StructArray.deploy();
 
-  await dynamicArray.deployed();
+  await structarray.deployed();
 
-  console.log("dynamicArray deployed to:", dynamicArray.address);
+  console.log("structarray deployed to:", structarray.address);
 
   // console.log("a: ", await bytesdatatype.a());
   // console.log("get(): ", await bytesdatatype.get());
-  console.log("arr(): ", await dynamicArray.arr(4));
+  // console.log("arr(): ", await DynamicArray.arr(4));
+  console.log("getArray(): ", await structarray.getArray());
   
 }
 
